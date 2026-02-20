@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Grocery {
    static final int SIZE = 10; // array size constant
 
-   /**
+/**
  * Prints all grocery items currently stored in the inventory.
  * Only items that are not null will be displayed.
  *
