@@ -13,16 +13,23 @@ public class Grocery {
    static final int SIZE = 10; // array size constant
 
    /**
-	 * Javadoc here.
-    * 
-    * @param names description
-    * @param prices description
-    * @param stocks description
-	 */
+ * Prints all grocery items currently stored in the inventory.
+ * Only items that are not null will be displayed.
+ *
+ * @param names  array containing item names
+ * @param prices array containing item prices
+ * @param stocks array containing item stock quantities
+ */
    public static void printInventory(String[] names, double[] prices, 
       int[] stocks)
    {
-      System.out.println("Test");
+      for (int i = 0; i < names.length; i++) {
+         if (names[i] != null) {
+            System.out.println("Item: " + names[i]
+            + " | Price: $" + prices[i]
+            + " | Stock: " + stocks[i]);
+            }
+            }
    }
 
    /**
