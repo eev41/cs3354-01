@@ -25,19 +25,37 @@ public class Grocery {
       System.out.println("Test");
    }
 
-   /**
-	 * Javadoc here.
-    * 
-    * @param names description
-    * @param stocks description
-    * @param target description
-    * @param amount description
-	 */
+  /**
+ * Searches for an item in the names array and increases
+ * its stock amount if found.
+ *
+ * @param names the array containing item names
+ * @param stocks the array containing item stock quantities
+ * @param target the name of the item to restock
+ * @param amount the quantity to add to the stock
+ */
    public static void restockItem(String[] names, int[] stocks, 
-      String target, int amount)
+   String target, int amount)
+{
+   boolean found = false;
+
+   for (int i = 0; i < names.length; i++)
    {
-      System.out.println(target + " " + amount);
+      if (names[i] != null && names[i].equalsIgnoreCase(target))
+      {
+         stocks[i] += amount;
+         System.out.println("Updated stock for " + names[i] + 
+                            ": " + stocks[i]);
+         found = true;
+         break;
+      }
    }
+
+   if (!found)
+   {
+      System.out.println("Item not found.");
+   }
+}
 
    /**
 	 * Prints a user menu from which other methods can be invoked
